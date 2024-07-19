@@ -1,0 +1,121 @@
+/*MANAGE BOOKS*/
+.addbooks {
+    text-transform: uppercase;
+    color: white;
+    font-size: 1.8rem;
+    text-align: center;
+    /* background-color: teal; */
+    background-color: teal;
+    border-radius: 5px;
+    margin: 5px 0;
+}
+
+.addbooks+form div span {
+    display: block;
+    width: 150px;
+    background-color: teal;
+    /* color: white; */
+    font-weight: bold;
+}
+
+.addbooks+form div input[type=submit] {
+    background-color: teal;
+    /* color: white; */
+    font-weight: bold;
+}
+
+.here-col-5 {
+    border: 5px solid teal;
+    border-radius: 10px;
+}
+
+.table_content {
+    height: 450px;
+    border: 2px solid green;
+    overflow: auto;
+}
+
+table tbody tr:nth-child(2n) {
+    background-color: rgb(219, 238, 238);
+}
+
+td button {
+    width: 49px;
+    height: 29px;
+    padding: 0;
+}
+
+td button input {
+    width: 49px;
+    height: 29px;
+    padding: 0;
+}
+
+td button input:hover {
+    color: white;
+}
+
+td button.update input[type="submit"] {
+    background-color: teal;
+}
+
+td button.delete input[type="submit"] {
+    background-color: red;
+}
+
+.error {
+    color: red;
+    width: 520px;
+    height: 20px;
+    font-style: italic;
+    font-size: 0.9rem;
+}
+
+/*BORROW*/
+
+button.approval_borrow form input[type="submit"] {
+    color: green;
+}
+
+button.return_borrow form input[type="submit"] {
+    color: red;
+}
+
+/*PROFIL*/
+.layout {
+    position: absolute;
+    background-color: teal;
+    z-index: 9;
+    padding: 10px;
+    width: 500px;
+    left: 430px;
+    top: 150px;
+}
+
+form#updatUserForm div span {
+    width: 137px;
+}
+
+form#updatUserForm div input[type="submit"] {
+    background-color: #ccc;
+}
+
+
+/*LIBRARY*/
+/*search box*/
+.searchBook {
+    border: 1px solid teal;
+    padding: 5px;
+    margin: 20px 0 30px 0;
+    border-radius: 5px;
+}
+
+.searchBook input[type="submit"] {
+    font-weight: bold;
+}
+
+/*UPDATE BOOK*/
+.updt_img {
+    width: 350px;
+    margin: 0 180px;
+}
