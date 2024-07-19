@@ -34,6 +34,7 @@
 	*faites un filtrage par livres disponibles ou empruntés (button available)
 	*faites une recherche par "nom", "genre", "auteur"
 
+NB : library.sql = base de donnee
 
 
 Bon usage ;-)
