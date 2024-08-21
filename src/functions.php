@@ -1361,23 +1361,26 @@ function displayAvailBorrowBook()
           <input type="submit" name="ask_borrow" value="Borrow"/>
         </form>
         ';
-      for ($i = 0; $i < count($book_borrow); $i++) {
-        if (($book_borrow[$i]["book_id"] == $value["id"]) &&
-          ($book_borrow[$i]["book_isbn"] == $value["isbn"]) && ($book_borrow[$i]["borrow_date"] != NULL) &&
-          ($book_borrow[$i]["return_date"] == NULL)
-        ) { //livre indisponible / emprunte==> on ecrase la valeur precedante
-          $button_at_end = '';
-          $result_body = '';
-        }
-        if (($book_borrow[$i]["book_id"] == $value["id"]) && ($book_borrow[$i]["book_isbn"] == $value["isbn"]) &&
-          ($book_borrow[$i]["borrow_date"] == NULL) && ($book_borrow[$i]["user_email"] == $email_to_show)
-        ) {
-          //en cours de traitement ==> on ecrase la valeur precedante
-          $button_at_end = '
+      if ($book_borrow) {
+
+        for ($i = 0; $i < count($book_borrow); $i++) {
+          if (($book_borrow[$i]["book_id"] == $value["id"]) &&
+            ($book_borrow[$i]["book_isbn"] == $value["isbn"]) && ($book_borrow[$i]["borrow_date"] != NULL) &&
+            ($book_borrow[$i]["return_date"] == NULL)
+          ) { //livre indisponible / emprunte==> on ecrase la valeur precedante
+            $button_at_end = '';
+            $result_body = '';
+          }
+          if (($book_borrow[$i]["book_id"] == $value["id"]) && ($book_borrow[$i]["book_isbn"] == $value["isbn"]) &&
+            ($book_borrow[$i]["borrow_date"] == NULL) && ($book_borrow[$i]["user_email"] == $email_to_show)
+          ) {
+            //en cours de traitement ==> on ecrase la valeur precedante
+            $button_at_end = '
 <button type="button" class="btn btn-primary btn-sm">
     Validation en attente
 </button>
 ';
+          }
         }
       }
       if ($button_at_end == '' || $result_body == '') {
@@ -1453,23 +1456,26 @@ function displayNotAvailBorrowBook()
       }
       $button_at_end = '';
 
-      for ($i = 0; $i < count($book_borrow); $i++) {
-        if (($book_borrow[$i]["book_id"] == $value["id"]) &&
-          ($book_borrow[$i]["book_isbn"] == $value["isbn"]) && ($book_borrow[$i]["borrow_date"] != NULL) &&
-          ($book_borrow[$i]["return_date"] == NULL)
-        ) { //livre indisponible
-          $button_at_end = '
+      if ($book_borrow) {
+
+        for ($i = 0; $i < count($book_borrow); $i++) {
+          if (($book_borrow[$i]["book_id"] == $value["id"]) &&
+            ($book_borrow[$i]["book_isbn"] == $value["isbn"]) && ($book_borrow[$i]["borrow_date"] != NULL) &&
+            ($book_borrow[$i]["return_date"] == NULL)
+          ) { //livre indisponible
+            $button_at_end = '
 <button type="button" class="btn btn-warning btn-sm">
     Déjà emprunté
 </button>
 ';
-        }
-        if (($book_borrow[$i]["book_id"] == $value["id"]) && ($book_borrow[$i]["book_isbn"] == $value["isbn"]) &&
-          ($book_borrow[$i]["borrow_date"] == NULL) && ($book_borrow[$i]["user_email"] == $email_to_show)
-        ) {
-          //en cours de traitement ==> on ecrase la valeur precedante
-          $button_at_end = '';
-          $result_body = '';
+          }
+          if (($book_borrow[$i]["book_id"] == $value["id"]) && ($book_borrow[$i]["book_isbn"] == $value["isbn"]) &&
+            ($book_borrow[$i]["borrow_date"] == NULL) && ($book_borrow[$i]["user_email"] == $email_to_show)
+          ) {
+            //en cours de traitement ==> on ecrase la valeur precedante
+            $button_at_end = '';
+            $result_body = '';
+          }
         }
       }
 
@@ -1555,26 +1561,28 @@ function displaySearchBookRequest()
             <input type="submit" name="ask_borrow" value="Borrow"/>
           </form>
           ';
-        for ($i = 0; $i < count($book_borrow); $i++) {
-          if (($book_borrow[$i]["book_id"] == $value["id"]) &&
-            ($book_borrow[$i]["book_isbn"] == $value["isbn"]) && ($book_borrow[$i]["borrow_date"] != NULL) &&
-            ($book_borrow[$i]["return_date"] == NULL)
-          ) { //livre indisponible / emprunte==> on ecrase la valeur precedante
-            $button_at_end = '
+        if ($book_borrow) {
+          for ($i = 0; $i < count($book_borrow); $i++) {
+            if (($book_borrow[$i]["book_id"] == $value["id"]) &&
+              ($book_borrow[$i]["book_isbn"] == $value["isbn"]) && ($book_borrow[$i]["borrow_date"] != NULL) &&
+              ($book_borrow[$i]["return_date"] == NULL)
+            ) { //livre indisponible / emprunte==> on ecrase la valeur precedante
+              $button_at_end = '
   <button type="button" class="btn btn-warning btn-sm">
       Déjà emprunté
   </button>
   ';
-          }
-          if (($book_borrow[$i]["book_id"] == $value["id"]) && ($book_borrow[$i]["book_isbn"] == $value["isbn"]) &&
-            ($book_borrow[$i]["borrow_date"] == NULL) && ($book_borrow[$i]["user_email"] == $email_to_show)
-          ) {
-            //en cours de traitement ==> on ecrase la valeur precedante
-            $button_at_end = '
+            }
+            if (($book_borrow[$i]["book_id"] == $value["id"]) && ($book_borrow[$i]["book_isbn"] == $value["isbn"]) &&
+              ($book_borrow[$i]["borrow_date"] == NULL) && ($book_borrow[$i]["user_email"] == $email_to_show)
+            ) {
+              //en cours de traitement ==> on ecrase la valeur precedante
+              $button_at_end = '
   <button type="button" class="btn btn-primary btn-sm">
       Validation en attente
   </button>
   ';
+            }
           }
         }
         $result .= $button_at_end;

@@ -7,8 +7,8 @@ define("CONFIG", ROOT . SP . "config");
 define("VIEWS", ROOT . SP . "views");
 define("MODEL", ROOT . SP . "model");
 define("IMAGES", ROOT . SP . "src" . SP . "images");
-define("BASE_URL", dirname($_SERVER['REQUEST_URI']));
-// define("BASE_URL", dirname($_SERVER['SCRIPT_NAME']));
+// define("BASE_URL", dirname($_SERVER['REQUEST_URI']));
+define("BASE_URL", dirname($_SERVER['SCRIPT_NAME']));
 define("TVA", 20);
 
 // import du model
