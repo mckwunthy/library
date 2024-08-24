@@ -294,7 +294,7 @@ function displayLibrary()
       // exit();
       $result .= '
   <div class="card m-3" style="width: 18rem;">
-  <img src="images' . SP . 'books' . SP . $value["image"] . '" class="card-img-top" alt="illustration">
+  <img src="./images' . SP . 'books' . SP . $value["image"] . '" class="card-img-top" alt="illustration">
   <div class="card-body">
     <h5 class="card-title"><strong>Title : </strong>' . $value["title"] . '</h5>
      <p class="card-text"><strong>Resume : </strong>
